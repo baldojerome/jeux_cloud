@@ -12,6 +12,8 @@ services:
   db:
     container_name: database
     restart: always
+    ports:
+      - "3306:3306" # NECESSARY ports for Deployment
     build:
       context: ./MySQL_DB
       dockerfile: Dockerfile
