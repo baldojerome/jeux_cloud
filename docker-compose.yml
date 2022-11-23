@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  web:
+    container_name: web
+    ports:
+      - "80:5000" # NECESSARY ports for Deployment
+    build:
+      context: ./Web
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+  db:
+    container_name: database
+    restart: always
+    build:
+      context: ./MySQL_DB
+      dockerfile: Dockerfile
