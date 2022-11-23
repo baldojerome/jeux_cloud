@@ -1,0 +1,23 @@
+INSERT INTO JOUEUR (ID, MDP) VALUES ("jerome", 1111);
+INSERT INTO JOUEUR (ID, MDP) VALUES ("emeri", 2222);
+INSERT INTO JOUEUR (ID, MDP) VALUES ("yaya", 3333);
+INSERT INTO JOUEUR (ID, MDP) VALUES ("bastien", 4444);
+INSERT INTO JOUEUR (ID, MDP) VALUES ("cynthia", 5555);
+
+
+test des inserts lors du déroulements 
+
+serge 6666
+gerard 7777
+anais 8888
+elodie 9999
+
+ARG USER_ID
+ARG GROUP_ID
+RUN groupadd -f -g $GROUP_ID user
+RUN useradd -u $USER_ID -g $GROUP_ID user
+USER user
+docker build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t asteroide .
+
+docker build -t asteroide:latest .
+docker run -d -p 80:80 asteroide
