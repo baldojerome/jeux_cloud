@@ -3,9 +3,9 @@ services:
   web:
     container_name: web
     ports:
-      - "80:80" # NECESSARY ports for Deployment
+      - "80:5000" # NECESSARY ports for Deployment
     build:
-      context: ./Web
+      context: ./Flask-Web
       dockerfile: Dockerfile
     depends_on:
       - db
@@ -25,3 +25,13 @@ services:
     environment:
         PMA_HOST: bd
 
+# Web -> Page Accueil / Connexion - > DB -> Login -> Jeux
+# Web -> Page Inscription - > Jeux
+# Jeux -> Deconnexion -> Logout -> Accueil
+# Jeux = NGINX / seulement en webgl
+# DB = MySQL
+# https://github.com/app-generator/flask-materialpro-lite
+# Design page acceuil
+# Ajouter blueprint jeu
+# Ajouter controller fonction appel conteneur jeu et render template
+# Debug styles

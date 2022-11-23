@@ -1,0 +1,11 @@
+colorama
+Flask
+Flask-Bootstrap
+Flask-Login
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+requests
+SQLAlchemy
+Werkzeug
+WTForms
