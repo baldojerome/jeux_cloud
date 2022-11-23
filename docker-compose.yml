@@ -3,7 +3,7 @@ services:
   web:
     container_name: web
     ports:
-      - "80:5000" # NECESSARY ports for Deployment
+      - "80:80" # NECESSARY ports for Deployment
     build:
       context: ./Web
       dockerfile: Dockerfile
@@ -15,5 +15,13 @@ services:
     ports:
       - "3306:3306" # NECESSARY ports for Deployment
     build:
-      context: ./MySQL_DB
+      context: ./DB
       dockerfile: Dockerfile
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - 8080:80
+    environment:
+        PMA_HOST: bd
+

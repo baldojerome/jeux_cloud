@@ -4,5 +4,5 @@
 
     $controleur = new Controleur();
     $controleur->VerifGet();
-
+    echo "hi!";
 ?>
