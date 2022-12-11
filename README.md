@@ -15,3 +15,5 @@ serveur : mysql_db
 name : root
 mdp : root
  
+POUR RESUME : 
+le docker-compose charge les différents conteneurs. Pour la base de données mysql celle-ci est implémenté directement à travers phpmyadmin. On crée une base de donées avec la table et le premier jeux de données. 
